@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Agenda de Contatos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="nav-container container">
+                <ul class="nav-bar">
+                    <li class="bar-item active">Contatos</li>
+                    <li class="bar-item">Cadastro</li>
+                </ul>
+                <h1 class="title">Agenda de Contatos</h1>
+                <button class="menu-bar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="container-message container"></div>
+
+        <main class="main container">
+        </main>
+        
+        <footer class="footer">
+            Agenda &copy; <span id="date"></span>
+        </footer>
+
+        <script src="js/util/util.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/services/cadastroService.js"></script>
+        <script src="js/services/contatosService.js"></script>
+        <script src="js/controllers/cadastro.js"></script>
+        <script src="js/controllers/contatos.js"></script>
+    </body>
+</html>
