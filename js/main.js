@@ -48,5 +48,5 @@ addPage('contatos')
 
 window.onload = function () {
     SELETOR_ID('date')
-        .innerText = new Date().toLocaleDateString().substring(6);
+        .innerText = new Date().getFullYear();
 }
