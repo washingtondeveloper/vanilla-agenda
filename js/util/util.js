@@ -1,4 +1,4 @@
-const imageDefault = '../img/user.png'
+const imageDefault = 'img/user.png'
 
 function showMessage(message, type) {
     const container = document.querySelector('.container-message')
