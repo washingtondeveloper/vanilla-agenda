@@ -59,12 +59,12 @@ class CadastroController {
             return
         }
 
-        this.contato.id = this.inputId.value ? this.inputId.value : ++this.id
+        this.contato.id =  this.inputId.value
         this.contato.name = this.inputName.value
         this.contato.phone = this.inputPhone.value
         this.contato.email = this.inputEmail.value
 
-        this.service.addContato({ ...this.contato })
+        this.service.addContato(this.contato)
         utils.showMessage('Cadastrado com Sucesso!!!', 'SUCCESS')
 
         this.service.cleanInputsForm([this.inputEmail, this.inputName, this.inputPhone])
