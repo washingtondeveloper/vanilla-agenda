@@ -1,3 +1,4 @@
+'use strict'
 /**
  * @name CadastroService
  * @description Responsavel em disponibilizar dados para o Controler CadastroController
@@ -7,19 +8,26 @@ class CadastroService {
 
     constructor() {
         this.contacts = JSON.parse(localStorage.getItem('contatos')) || []
-
+        this.id = 0
     }
 
     addContato(contato) {
-        let editandoContato = this.getContato(contato.id)
-        if(editandoContato) {
-            this.editingContato(editandoContato, contato)
-        } else {
+
+        if(contato.id) {
+            this.editingContato(contato)
+            return
+        }
+
+        if(!contato.id) {
+            
+            contato.id = this.contacts.length + 1        
 
             this.contacts.push(contato)
+
             localStorage.removeItem('contatos')
             localStorage.setItem('contatos', JSON.stringify(this.contacts))
         }
+
     }
 
     cleanInputsForm(elements) {
@@ -30,14 +38,13 @@ class CadastroService {
         return this.contacts.find(c => c.id == id ? c : undefined)
     }
 
-    editingContato(editandoContato, contato) {
-        let index = this.getIndexOfContato(editandoContato)
-        this.contacts.splice(index, 1)
-
+    editingContato(contato) {
+        let index = this.getIndexOfContato(contato)
+        console.log(index)
         if(!contato.img)
-            contato.img = editandoContato.img
+            contato.img = this.getContato(contato.id).img
         
-        this.contacts[index] = contato
+        this.contacts.splice(index, 1, contato)
 
         localStorage.removeItem('contatos')
         localStorage.setItem('contatos', JSON.stringify(this.contacts))
