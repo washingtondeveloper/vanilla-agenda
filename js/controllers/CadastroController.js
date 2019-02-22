@@ -1,8 +1,3 @@
-/**
- * 
- * @description Responsavel em disponibilizar dados para o Controler CadastroController
- * @author Washington Developer
- */
 class CadastroService {
 
     constructor() {
