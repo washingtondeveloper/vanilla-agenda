@@ -1,4 +1,4 @@
-# vanilla-agenda
+# Vanilla-agenda
 
 ## Validação de Campos
 - A aplicação ela tem uma validação de campos, quando for fazer um novo cadastro, não é obrigado colocar uma imagem, mas é obrigatório colocar 'nome, email e telefone'.
