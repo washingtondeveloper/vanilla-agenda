@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+:root {
+    --color-font-messages: #fff;
+    --color-container-message-success: #97e062;
+    --color-container-message-error: #e06262;
+    --color-container-message-info: #00BFFF;
+}
+
 body {
     margin: 0;
     background-color: #efefef;
@@ -23,7 +30,7 @@ body {
     font-size: 1.5.rem;
 }
 
-.nav-bar {
+.nav-bar-first {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -64,6 +71,10 @@ body {
 
 .main {
    padding: 25px;
+}
+
+.active-menu-bar {
+    background-color: #457821;
 }
 
 .active {
@@ -202,9 +213,23 @@ button:hover {
     background-color: aquamarine;
 }
 
-@media (max-width: 587px) {
+.nav-bar-second {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: #457821;
+
+    display: none;
+}
+
+/* Chamada com JavaScript */
+.nav-bar-second-show {
+    display: block;
+}
+
+@media (max-width: 600px) {
     
-    .nav-bar {
+    .nav-bar-first {
         display: none;
     }
 
@@ -239,18 +264,18 @@ button:hover {
 }
 
 .message-success {
-    background-color: #97e062;
-    color: #457821;
+    background-color: var(--color-container-message-success);
+    color: var(--color-font-messages);
 }
 
 .message-info {
-    background-color: #6275e0;
-    color: #fff;
+    background-color: var(--color-container-message-info);
+    color: var(--color-font-messages);
 }
 
 .message-error {
-    background-color: #e06262;
-    color: #fff;
+    background-color: var(--color-container-message-error);
+    color: var(--color-font-messages);
 }
 
 input[type="text"].input-error {
